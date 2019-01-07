@@ -2,36 +2,34 @@ import numpy as np
 
 x = np.arange(9).reshape(9,1)
 y =  7 * x + 9
-print(x.shape)
-print(y.shape)
+#print(x.shape)
+#print(y.shape)
 X = np.append(np.ones((9,1)),x,axis=1)
-print(X.shape)
+#print(X.shape)
 theta = np.array([0.0,0.0]).reshape(2,1)
-print(theta.shape)
+#print(theta.shape)
 hypothesis = np.matmul(X,theta)
-print(hypothesis.shape)
-<<<<<<< HEAD
+#print(hypothesis.shape)
 alpha = 0.09                                     # Optimal Learning Rate
-=======
 alpha = 0.085                                    # Optimal Learning Rate
->>>>>>> da628c02794510147f7c1307a1fe6dac373575f0
 j = np.sum( np.square(hypothesis - y)) / (2 * 9) # Cost Function
-print(j)
+#print(j)
 for i in range(9000):                            # Gradient Descent
     hypothesis = np.matmul(X,theta)
     theta[0] = theta[0] - alpha * np.sum(hypothesis - y) / 9
     theta[1] = theta[1] - alpha * np.sum((hypothesis - y) * x) / 9
 j = np.sum( np.square(hypothesis - y)) / (2 * 9)
-print(j)
-print(theta)
-print(hypothesis.astype(int))m
-print(y)
+print("COST:\t", j)
+#print("THETA:\t",theta)
+#print("HYPOTHESIS:\t",hypothesis.astype(int))
+#print(y)
 def predict(n):                                  # Prediction
     n = np.array([1, n]).reshape(1,2)
-    print('\n')
-    print(n)
-    print(theta)
-    print('\n')
+    #print('\n')
+    #print(n)
+    #print(theta)
+    #print('\n')
     hypothesis = np.matmul(n,theta)
     print(hypothesis)
+print("PREDICTION:")
 predict(6)
