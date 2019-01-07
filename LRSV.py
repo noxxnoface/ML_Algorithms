@@ -10,7 +10,11 @@ theta = np.array([0.0,0.0]).reshape(2,1)
 print(theta.shape)
 hypothesis = np.matmul(X,theta)
 print(hypothesis.shape)
+<<<<<<< HEAD
 alpha = 0.09                                     # Optimal Learning Rate
+=======
+alpha = 0.085                                    # Optimal Learning Rate
+>>>>>>> da628c02794510147f7c1307a1fe6dac373575f0
 j = np.sum( np.square(hypothesis - y)) / (2 * 9) # Cost Function
 print(j)
 for i in range(9000):                            # Gradient Descent
